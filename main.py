@@ -27,10 +27,10 @@ created_form = service.forms().create(body=form_data).execute()
 
 form_id = created_form["formId"]
 
-print(" Form created successfully")
+print(" ***Form created successfully***")
 print(f"Form ID: {form_id}")
 print(f"Edit URL: https://docs.google.com/forms/d/{form_id}/edit")
-print(f"Public Quiz URL (share this with brother): https://docs.google.com/forms/d/{form_id}/viewform")
+print(f"Public Quiz URL: https://docs.google.com/forms/d/{form_id}/viewform")
 
 service.forms().batchUpdate(
     formId=form_id,
@@ -82,9 +82,9 @@ service.forms().batchUpdate(
     body={"requests": requests}
 ).execute()
 
-print(" All questions added successfully")
+print("***All questions added successfully***")
 
 remaining = df.iloc[args.count:]
 remaining.to_csv(args.csv, index=False, quoting=1)
-print(f" Remaining questions saved to '{args.csv}'")
+print(f"***Remaining questions saved to '{args.csv}'***")
 
